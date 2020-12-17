@@ -44,6 +44,8 @@ export default function config(this: Server): void {
   });
 
   this.get("/test/:segment", (schema) => Promise.resolve(schema.create("foo"))); // $ExpectType void
+
+  this.handledRequests() // $ExpectType Request[]
 }
 
 // In `new Server`, models and factories are untyped, and you can
